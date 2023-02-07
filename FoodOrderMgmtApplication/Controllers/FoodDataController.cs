@@ -18,7 +18,7 @@ namespace FoodOrderMgmtApplication.Controllers
 
         // GET: api/FoodData/Listfoods
         [HttpGet]
-        public IEnumerable<food> ListFoods()
+        public IEnumerable<foodDto> ListFoods()
         {
             List<food> Foods = db.Foods.ToList();
             List<foodDto> foodDtos = new List<foodDto>();
@@ -26,7 +26,7 @@ namespace FoodOrderMgmtApplication.Controllers
             Foods.ForEach(b => foodDtos.Add(new foodDto()
             {
                 FoodId = b.FoodId,
-                Foodame = b.FoodName,
+                FoodName = b.FoodName,
                 FoodCategory = b.FoodCategory,
                 FoodPrice = b.FoodPrice,
                 FoodQty = b.FoodQty,

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<FoodOrderMgmtApplication.Models.customerDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<a href="/customer/New">New Customer</a>
+@foreach (var customer in Model)
+{
+    <h2><a href="/customer/Details/@customer.CustomerId">@customer.CustomerFirstName</a></h2>
+    <div>Address: @customer.CustomerAddress</div>
+    <div>EmailID: @customer.CustomerEmailId</div>
+    <div>Contact: @customer.CustomerPhone</div>

@@ -33,25 +33,26 @@ namespace FoodOrderMgmtApplication.Models
         public virtual order Order { get; set; }
 
 
-        //DTO
-
-        public class foodDto
-        {
-            public int FoodId { get; set; }
-
-            public int FoodCategory { get; set; }
-
-            public string FoodName { get; set; }
-
-            public double FoodPrice { get; set; }
-
-            public int FoodQty { get; set; }
-
-            public int OrderId { get; set; }
-
-        }
+        
 
 
+
+    }
+    //DTO
+
+    public class foodDto
+    {
+        public int FoodId { get; set; }
+
+        public int FoodCategory { get; set; }
+
+        public string FoodName { get; set; }
+
+        public double FoodPrice { get; set; }
+
+        public int FoodQty { get; set; }
+
+        public int OrderId { get; set; }
 
     }
 }

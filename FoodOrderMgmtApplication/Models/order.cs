@@ -25,6 +25,14 @@ namespace FoodOrderMgmtApplication.Models
 
         public virtual customer Customer { get; set; }
 
+        public int FoodId { get; set; }
+
+
+
+        [ForeignKey("Food")]
+
+        public virtual customer Food { get; set; }
+
         //a order has  many food orders
 
         public ICollection<food> Foods { get; set; }
@@ -41,6 +49,8 @@ namespace FoodOrderMgmtApplication.Models
         public int OrderQty { get; set; }
 
         public int CustomerId { get; set; }
+
+        public int FoodId { get; set; }
 
     }
     
