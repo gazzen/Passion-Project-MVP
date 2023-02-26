@@ -1,0 +1,31 @@
+﻿
+@model FoodOrderMgmtApplication.Models.customerDto
+@{
+    ViewBag.Title = "Details";
+}
+
+<a href="/Customer/List">Go back to list</a>
+<h2>@Model.CustomerFirstName</h2>
+
+<div>email:@Model.CustomerEmailId</div>
+<div>address:@Model.CustomerAddress</div>
+<div>phone: @Model.CustomerPhone</div>
+
+<div>
+    
+        <h4>Add new customer to take care of @Model.SelectedCustomer.CustomerFirstName</h4>
+    
+        <form method="POST" action="/Customer/Associate/@Model.SelectedCustomer.CustomerId">
+            <select name="customerId">
+                @foreach (var customer in Model.Availablecustomer)
+                {
+                    <option value="@customer.CustomerId">@customer.CustomerFirstName @customer.CustomerLastName</option>
+                }
+
+            </select>
+            <input type="submit" value="customer" />
+        </form>
+
+    </div>
+</div>
+

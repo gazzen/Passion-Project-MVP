@@ -1,0 +1,17 @@
+﻿
+@model FoodOrderMgmtApplication.Models.foodDto
+
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<h2>Are you sure you want to delete this food?</h2>
+<a href="/food/List">Cancel</a>
+<h2>@Model.FoodName</h2>
+<div>Food Name: @Model.FoodName</div>
+<div>Price: @Model.FoodPrice</div>
+<div>Quantity: @Model.FoodQty</div>
+<form action="/Food/Delete/@Model.FoodId" method="POST">
+    <input type="submit" value="Confirm Delete" />
+
+</form>

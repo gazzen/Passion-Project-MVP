@@ -18,6 +18,9 @@ namespace FoodOrderMgmtApplication.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        public int OrderId { get; private set; }
+        public int OrderQty { get; private set; }
+
         // GET: api/OrderData/Listorders
         [HttpGet]
         public IEnumerable<orderDto> ListOrders()
@@ -31,7 +34,7 @@ namespace FoodOrderMgmtApplication.Controllers
                 OrderId = a.OrderId,
                 OrderQty = a.OrderQty,
                 CustomerId = a.Customer.CustomerId
-             
+
             }));
             return orderDtos;
             
@@ -44,11 +47,13 @@ namespace FoodOrderMgmtApplication.Controllers
         {
 
             order order = db.Orders.Find(id);
-            orderDto orderDto = new orderDto();
+            orderDto orderDto = new orderDto()
             {
                 OrderId = order.OrderId,
-                OrderQty =order.OrderQty
-            }
+
+                OrderQty = order.OrderQty
+            };
+
             if (order == null)
             {
                 return NotFound();

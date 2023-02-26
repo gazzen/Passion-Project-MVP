@@ -1,0 +1,27 @@
+﻿
+@model IEnumerable<FoodOrderMgmtApplication.Models.foodDto>
+
+@{
+    ViewBag.Title = "New";
+}
+
+
+
+<h2>Create Food</h2>
+<form action="/Food/Create" method="POST">
+    <div>
+        <label>Food Name:</label> <input type="text" name="FoodName" />
+    </div>
+    <div>
+        <label>Price:</label> <input type="text" name="FoodPrice" />
+    </div>
+
+    <div>
+        <label>Quantity:</label> <input type="text" name="FoodQty" />
+    </div>
+
+    <input type="submit" value="Add Food" />
+
+    
+</form>
+

@@ -1,0 +1,25 @@
+﻿
+@model FoodOrderMgmtApplication.Models.ViewModels.UpdateCustomer
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Customer</h2>
+<form action="/Customer/Update/@Model.SelectedCustomer.CustomerId" method="POST">
+    <div style="display:none;">
+        @* Pass through the animal ID *@
+        <input type="text" name="CustomerId" value="@Model.SelectedCustomer.CustomerId" />
+    </div>
+    <div>
+        <label>Name:</label> <input type="text" name="CustomerFirstName" value="@Model.SelectedCustomer.CustomerFirstName" />
+    </div>
+    <div>
+        <label>EmailID:</label> <input type="number" name="CustomerEmailId" value="@Model.SelectedCustomer.CustomerFirstName" />
+    </div>
+
+    <div>
+        <input type="submit" value="Update Customer" />
+
+    </div>
+</form>

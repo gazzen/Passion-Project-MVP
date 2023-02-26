@@ -1,0 +1,13 @@
+﻿@model IEnumerable<FoodOrderMgmtApplication.Models.foodDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<a href="/Food/Details/@food.FoodId">food.FoodName</a>
+@foreach (var food in Model)
+{
+    <h2><a href="/food/Details/@food.FoodId">@food.FoodName</a></h2>
+    <div>Food name: @food.FoodName</div>
+    <div>Price: @food.FoodPrice</div>
+    <div>Quantity: @food.FoodQty</div>

@@ -1,0 +1,25 @@
+﻿
+@model FoodOrderMgmtApplication.Models.ViewModels.UpdateFood
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Food</h2>
+<form action="/Food/Update/@Model.SelectedFood.FoodId" method="POST">
+    <div style="display:none;">
+        @* Pass through the food ID *@
+        <input type="text" name="FoodId" value="@Model.SelectedFood.FoodId" />
+    </div>
+    <div>
+        <label>Food Name:</label> <input type="text" name="FoodName" value="@Model.SelectedFood.FoodName" />
+    </div>
+    <div>
+        <label>Price:</label> <input type="number" name="FoodId" value="@Model.SelectedFood.FoodName" />
+    </div>
+
+    <div>
+        <input type="submit" value="Update Food" />
+
+    </div>
+</form>

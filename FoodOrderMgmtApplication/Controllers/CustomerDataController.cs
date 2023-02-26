@@ -10,7 +10,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using FoodOrderMgmtApplication.Models;
-using System.Diagnostics;
+//using System.Diagnostics;
 
 namespace FoodOrderMgmtApplication.Controllers
 {
@@ -53,7 +53,7 @@ namespace FoodOrderMgmtApplication.Controllers
                 CustomerEmailId = customer.CustomerEmailId,
                 CustomerAddress = customer.CustomerAddress,
                 CustomerPhone = customer.CustomerPhone
-            }
+            };
             if (customer == null)
             {
                 return NotFound();
